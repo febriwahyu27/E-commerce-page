@@ -1,0 +1,487 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+.active-galery{
+    border-radius: 10px;
+    border: 2px solid hsl(26, 100%, 55%);
+}
+
+/******************* NAVBAR *******************/
+nav {
+    padding: 25px 0;
+    margin: 0 50px 50px 50px;
+    border-bottom: 1px solid hsl(220, 14%, 75%);
+}
+
+nav ul {
+    position: relative;
+    display: flex;
+}
+
+nav ul li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    list-style: none;
+}
+
+nav ul li.icon-menu{
+    display: none;
+}
+
+nav ul li.nav-menu {
+    font-size: 14px;
+    margin: 0 15px;
+}
+
+nav ul li.nav-menu a {
+    color: hsl(0, 0%, 0%);
+}
+
+nav ul li a {
+    text-decoration: none;
+}
+nav ul .cart{
+    position: absolute;
+    right: 30px;
+    top: 25%;
+    font-size: 15px;
+}
+nav ul .cart:hover{
+    cursor: pointer;
+}
+nav ul .logo a {
+    font-weight: 600;
+    color: black;
+    font-size: 32px;
+    font-family: 'Outfit', sans-serif;
+    margin: 0 40px 0 0;
+}
+
+nav ul .profile {
+    position: absolute;
+    right: 0;
+}
+nav ul .profile img{
+    width: 40px;
+    border-radius: 18px;
+}
+nav ul .profile img:hover{
+    cursor: pointer;
+    border: 3px solid hsl(26, 100%, 55%);
+}
+
+.my-cart{
+    display: none;
+    position: absolute;
+    width: 30%;
+    right: 20px;
+    top: 70px;
+    z-index: 1;
+    padding: 10px 0;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.my-cart.block{
+    display: block;
+}
+.my-cart p{
+    font-size: 14px;
+    font-family: 'Kumbh Sans', sans-serif;
+    margin: 0 0 10px 0;
+    padding: 0 15px;
+}
+.my-cart p#empty{
+    padding: 15px 0;
+    text-align: center;
+}
+.my-cart .order{
+    display: flex;
+    justify-content: center;
+    padding: 0 15px;
+}
+.my-cart .order p#text-empty{
+    text-align: center;
+}
+.my-cart .order img.image-cart{
+    width: 40px;
+    padding: 20px 0;
+}
+.my-cart .order span{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.my-cart .order span p{
+    margin: 0;
+}
+.my-cart .order img.delete{
+    width: 20px;
+    padding: 30px 0;
+}
+.my-cart button{
+    margin: 0 15px;
+    width: 90%;
+    padding: 10px 0;
+    color: white;
+    border-radius: 10px;
+    border: 1px solid hsl(26, 100%, 55%);
+    background-color: hsl(26, 100%, 55%);
+}
+.my-cart button:hover{
+    cursor: pointer;
+}
+
+@media screen and (max-width: 950px){
+    nav{
+        padding: 10px 20px 10px 0;
+        margin: 0 0 10px 0;
+        border: none;
+    }
+    nav ul {
+        position: relative;
+        display: flex;
+    }
+    nav ul li.icon-menu{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-right: 20px;
+    }
+    nav ul li.nav-menu {
+        display: none;
+        font-size: 14px;
+        margin: 0 15px;
+    }
+    nav ul .logo a{
+        font-weight: 600;
+        color: black;
+        font-size: 17px;
+        font-family: 'Outfit', sans-serif;
+        margin: 0 0 0 0;
+    }
+    nav ul .profile {
+        position: absolute;
+        right: 0;
+    }
+    nav ul .profile img{
+        width: 25px;
+    }
+    nav ul .cart{
+        position: absolute;
+        right: 20px;
+        top: 10%;
+    }
+    nav ul .cart img{
+        width: 20px;
+    }
+    .my-cart{
+        display: none;
+        position: absolute;
+        width: 90%;
+        right: 20px;
+        top: 70px;
+        z-index: 1;
+        padding: 10px 0;
+        border-radius: 10px;
+        background-color: white;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+    .my-cart.block{
+        display: block;
+    }
+}
+/******************* END *******************/
+
+/******************* SIDEBAR *******************/
+.sidebar{
+    display: none;
+    position: fixed;
+    width: 80%;
+    height: 100vh;
+    z-index: 1;
+    background-color: white;
+}
+.transparent{
+    display: none;
+    position: fixed;
+    right: 0;
+    width: 30%;
+    height: 100vh;
+    z-index: 1;
+    filter: opacity(.5);
+    background-color: black;
+}
+
+@media screen and (max-width: 950px){
+    .sidebar{
+        position: fixed;
+        width: 70%;
+        height: 100vh;
+        z-index: 1;
+        padding: 20px 20px;
+        background-color: white;
+    }
+    .sidebar ul{
+        margin-top: 20px;
+    }
+    .sidebar ul li{
+        margin: 15px 0;
+        list-style: none;
+    }
+    .sidebar ul li a{
+        color: black;
+        font-weight: 700;
+        text-decoration: none;
+    }
+}
+/******************* END *******************/
+
+
+
+main {
+    display: grid;
+    grid-template-areas: 'galery caption';
+    padding: 0 50px 0 70px;
+}
+
+main .galery {
+    grid-area: galery;
+}
+main .galery figure{
+    position: relative;
+    display: flex;
+    width: 400px;
+    border-radius: 10px;
+    /* overflow: hidden; */
+}
+main .galery .carousel{
+    display: none;
+    width: 100%;
+}
+main .galery figure img#thumbnail{
+    width: 400px;
+}
+main .galery figure img.image-mobile{
+    display: none;
+}
+main .galery .img-galery.active-galery img{
+    opacity: 0.5;
+    border: none;
+    background-color: grey;
+}
+main .galery .slider{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+main .galery .slider .img-galery img{
+    width: 80px;
+    height: 100%;
+    border-radius: 8px;
+}
+main .galery .slider .img-galery img:hover{
+    cursor: pointer;
+}
+
+/* CAPTION */
+main .caption {
+    grid-area: caption;
+    padding: 50px 0 0 80px;
+}
+
+main .caption #company {
+    text-transform: uppercase;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+    color: hsl(26, 100%, 55%);
+}
+
+main .caption h1 {
+    margin: 0 0 20px 0;
+    font-weight: 700;
+    font-size: 40px;
+}
+
+main .caption #keterangan {
+    margin: 0 0 20px 0;
+    font-size: 16px;
+    color: grey;
+}
+main .caption div{
+    display: flex;
+    font-weight: bold;
+}
+main .caption div span{
+    font-size: 24px;
+}
+main .caption div h2{
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+main .caption div p{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 14px;
+    text-align: center;
+    padding: 5px 5px;
+    height: 15px;
+    margin-top: 8px;
+    font-weight: 700;
+    color: hsl(26, 100%, 55%);
+    background-color: hsl(25, 100%, 94%);
+}
+main .caption #line-through{
+    font-size: 13px;
+    color: grey;
+    text-decoration: line-through;
+}
+main .caption .add-to-cart{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0 0 0;
+}
+main .caption .add-to-cart button#keranjang i{
+    width: 16px;
+    margin-right: 3px;
+    color: white;
+
+}
+main .caption .add-to-cart button#keranjang{
+    width: 70%;
+    border-radius: 7px;
+    border: none;
+    color: white;
+    background-color: hsl(26, 100%, 55%);
+}
+main .caption .add-to-cart button#keranjang:hover{
+    cursor: pointer;
+}
+main .caption .add-to-cart .jumlah{
+    border-radius: 30px;
+    background-color: hsl(223, 64%, 99%);
+}
+main .caption .add-to-cart .jumlah button{
+    padding: 10px 15px;
+    color: hsl(26, 100%, 55%);
+    border: none;
+    background-color: hsl(223, 64%, 99%);
+}
+main .caption .add-to-cart .jumlah span{
+    padding: 10px 0;
+    margin: 0 10px;
+}
+
+@media screen and (max-width: 950px){
+    main {
+        display: grid;
+        grid-template-areas: 'galery'
+        'caption';
+        padding: 0;
+    }
+    main .galery {
+        grid-area: galery;
+    }
+    main .galery figure{
+        display: none;
+        position: relative;
+        width: 100%;
+        border-radius: 0px;
+    }
+    main .galery .carousel{
+        display: block;
+        width: 100%;
+    }
+    main .galery figure img#thumbnail{
+        width: 100%;
+    }
+    main .galery figure img.image-mobile{
+        display: block;
+    }
+    main .galery .slider{
+        display: none;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+
+    main .caption {
+        grid-area: caption;
+        padding: 20px 25px;
+    }
+    main .caption #company{
+        text-transform: uppercase;
+        font-weight: 700;
+        margin: 0 0 15px 0;
+        font-size: 15px;
+        color: hsl(26, 100%, 55%);
+    }
+
+    main .caption h1{
+        margin: 0 0 20px 0;
+        font-weight: 700;
+        font-size: 28px;
+    }
+    main .caption #keterangan {
+        margin: 0 0 20px 0;
+        font-size: 15px;
+        color: grey;
+        text-align: justify;
+    }
+    main .caption #line-through{
+        float: right;
+        font-size: 13px;
+        color: grey;
+        margin-top: -35px;
+        text-decoration: line-through;
+    }
+    main .caption .add-to-cart{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 20px 0 0 0;
+    }
+    main .caption .add-to-cart .jumlah{
+        border-radius: 10px;
+        margin-bottom: 20px;
+        background-color: hsl(223, 64%, 99%);
+    }
+    main .caption .add-to-cart .jumlah button{
+        padding: 10px 15px;
+        color: hsl(26, 100%, 55%);
+        border: none;
+        width: 100%;
+        border-radius: 10px;
+        background-color: hsl(223, 64%, 99%);
+    }
+    main .caption .add-to-cart .jumlah span{
+        padding: 13px 0;
+        margin: 0 10px;
+    }
+    main .caption .add-to-cart button#keranjang{
+        width: 100%;
+        border-radius: 7px;
+        border: none;
+        color: white;
+        padding: 13px 0;
+        background-color: hsl(26, 100%, 55%);
+    }
+}
+
+/* FOOTER */
+footer{
+    margin-top: 20px;
+    padding: 7px 0;
+    color: white;
+    background-color: #408E91;
+}
+.attribution { 
+    font-size: 11px; text-align: center; 
+}
+.attribution a {
+    text-decoration: none;
+    color: #E49393;
+}
